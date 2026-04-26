@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.functional as F
-from torchvision.models.segmentation.deeplabv3 import ASPP
 
 
 class SimpleMobileNetSeg(nn.Module):

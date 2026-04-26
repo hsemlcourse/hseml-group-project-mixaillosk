@@ -91,6 +91,21 @@
 | gtFine | 1 | Аннотации высокого качества (маски) | ~2.5 ГБ |
 | leftImg8bit | 3 | Исходные RGB-изображения с левой камеры | ~11 ГБ |
 
+### Установка
+```
+csDownload -d C:\absolute\path\to\data\raw\cityscapes gtFine_trainvaltest.zip
+csDownload -d C:\absolute\path\to\data\raw\cityscapes leftImg8bit_trainvaltest.zip
+
+# Распаковка
+cd data/raw/cityscapes
+unzip gtFine_trainvaltest.zip
+unzip leftImg8bit_trainvaltest.zip
+
+# Windows
+# Expand-Archive .\gtFine_trainvaltest.zip .
+# Expand-Archive .\leftImg8bit_trainvaltest.zip .
+```
+
 ### Структура файлов
 
 После распаковки датасет имеет иерархическую структуру по городам и сплитам:

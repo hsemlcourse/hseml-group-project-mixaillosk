@@ -91,6 +91,7 @@ source .venv/bin/activate   # Linux/macOS
 # .venv\Scripts\activate    # Windows
 
 pip install -r requirements.txt
+pip install cityscapesscripts
 ```
 После этого подключить ядро ноутбуков к этому интерпретатору, а также загрузить сам датасет (инструкция ниже)
 

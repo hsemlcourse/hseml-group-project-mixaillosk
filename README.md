@@ -58,7 +58,8 @@
 │   ├── baseline_unet.pt                # Сохранённая baseline-модель
 │   └── checkpoints/                    # Чекпоинты в процессе обучения
 ├── notebooks
-│   └── experiments.ipynb               # Эксперименты: анализ, baseline, архитектуры, метрики
+|   ├── eda.ipynb                       # Анализ
+│   └── experiments.ipynb               # Эксперименты, baseline, архитектуры, метрики
 ├── presentation
 │   └── presentation.pdf                # Слайды для защиты
 ├── report
@@ -80,9 +81,18 @@
 ```
 
 ## Запуск
-Запуск происходит в google colab
-На данныйй момент запускается python notebook, а именно файл notebooks/experiments.ipynb. Для его запуска необходимо зарегестрироваться на сайте датасета [CityScapes](https://www.cityscapes-dataset.com/?spm=a2ty_o01.29997173.0.0.3b0255fbLwC7H5), после чего добавить пароль в секреты google colab с ключом CSDatasetPassword, а также поменять глобальную переменную USERNAME на свой. Данные операции необходимы для скачивания датасета, поскольку из-за нехватки места на ноутбуке, использовался google colab
+На данный момент запускаются лишь ноутбуки для анализа и первых экспериментов работы моделей/лоадеров/датасетов (кастомных). Для запуска необходимо выполнить следующие команды:
+```
+git clone <url>
+cd <repo-name>
 
+python -m venv .venv
+source .venv/bin/activate   # Linux/macOS
+# .venv\Scripts\activate    # Windows
+
+pip install -r requirements.txt
+```
+После этого подключить ядро ноутбуков к этому интерпретатору, а также загрузить сам датасет (инструкция ниже)
 
 ## Данные
 ### Источники
@@ -92,6 +102,8 @@
 | leftImg8bit | 3 | Исходные RGB-изображения с левой камеры | ~11 ГБ |
 
 ### Установка
+Для установки необходимо зарегестрироваться на официальном сайте [CityScapes] (https://www.cityscapes-dataset.com) и ввести логин и пароль при вводе команд ниже
+
 ```
 csDownload -d C:\absolute\path\to\data\raw\cityscapes gtFine_trainvaltest.zip
 csDownload -d C:\absolute\path\to\data\raw\cityscapes leftImg8bit_trainvaltest.zip
@@ -123,6 +135,7 @@ unzip leftImg8bit_trainvaltest.zip
 ```
 
 ## Результаты
+Результаты по CP1 представлены в README.MD в notebooks/
 Здесь коротко выпишите результаты.
 | Модель | [Метрика 1] | [Метрика 2] | Примечание |
 |--------|-------------|-------------|------------|
